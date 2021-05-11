@@ -268,6 +268,12 @@ snippet tde
 # printf
 snippet pr
 	printf("${1:%s}\n"${2});
+snippet pre
+	printf("[%s-%d]enter\n", __func__, __LINE__);
+snippet prfl
+	printf("[%s-%d]${1:%s}\n", __func__, __LINE__, ${2});
+snippet prflno
+	printf("[%s-%d]${1:hello}", __func__, __LINE__);
 # fprintf (again, this isn't as nice as TextMate's version, but it works)
 snippet fpr
 	fprintf(${1:stderr}, "${2:%s}\n"${3});
