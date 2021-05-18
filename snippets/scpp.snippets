@@ -1,0 +1,10 @@
+snippet sinc
+	#include <${1:iostream}>
+
+snippet saddcpptime
+	#include <ctime>
+	{
+		auto end = std::chrono::system_clock::now();
+		std::time_t end_time = std::chrono::system_clock::to_time_t(end);
+		std::cout << "Current time: " << std::ctime(&end_time) << std::endl;
+	}
