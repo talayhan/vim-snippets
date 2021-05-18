@@ -1,0 +1,8 @@
+snippet saddctime
+	#include <stdio.h>
+	#include <time.h>
+	{
+		time_t t;
+		time(&t);
+		printf("Current time: %s", ctime(&t));
+	}
