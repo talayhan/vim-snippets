@@ -1,6 +1,8 @@
 snipMate & UltiSnip Snippets
 ============================
 
+## This repo is fork of @honza's vim-snippets [[10]]
+
 [![Build Status](https://travis-ci.org/honza/vim-snippets.svg)](https://travis-ci.org/honza/vim-snippets)
 
 This repository contains snippets files for various programming languages.
@@ -251,3 +253,4 @@ terms of the MIT license.
 [7]: http://github.com/SirVer/ultisnips
 [8]: http://vim-wiki.mawercer.de/wiki/topic/vim%20plugin%20managment.html
 [9]: https://github.com/MarcWeber/vim-addon-manager
+[10]: https://github.com/honza/vim-snippets
