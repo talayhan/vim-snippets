@@ -4,5 +4,23 @@ snippet saddctime
 	{
 		time_t t;
 		time(&t);
-		printf("Current time: %s", ctime(&t));
+		printf("[%s-%d]Current time: %s", __func__, __LINE__, ctime(&t));
 	}
+
+snippet sgettimeofday
+	#include <stdio.h>
+	#include <sys/time.h>  // for gettimeofday()
+	#include <unistd.h>    // for sleep()
+	{
+		struct timeval start, end;
+
+		gettimeofday(&start, NULL);
+		// do some stuff here
+		gettimeofday(&end, NULL);
+
+		long seconds = (end.tv_sec - start.tv_sec);
+		long micros = ((seconds * 1000000) + end.tv_usec) - (start.tv_usec);
+
+		printf("The elapsed time is %d seconds and %d micros\n", seconds, micros);
+	}
+

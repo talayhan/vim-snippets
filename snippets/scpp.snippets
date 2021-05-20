@@ -1,3 +1,4 @@
+## Personal Snippets
 snippet sinc
 	#include <${1:iostream}>
 
@@ -8,3 +9,25 @@ snippet saddcpptime
 		std::time_t end_time = std::chrono::system_clock::to_time_t(end);
 		std::cout << "Current time: " << std::ctime(&end_time) << std::endl;
 	}
+
+snippet base13
+	std::string base$1(int dec) {
+		std::string digits;
+		do {
+			int units = dec % $1;
+			auto c = static_cast<char>( units < 10 ? '0'+units : 'A'+units-10 );
+			digits = std::string(1, c) + digits;
+			dec /= $1;
+		} while (dec > 0);
+		return digits;
+	}
+
+snippet measuretime
+	#include <chrono>
+	using namespace std::chrono;
+
+	auto start = high_resolution_clock::now();
+	auto stop = high_resolution_clock::now();
+	auto duration = duration_cast<microseconds>(stop - start);
+	cout << "Time taken by " << __PRETTY_FUNCTION__ << " function " << duration.count() << " microseconds"
+		 << endl;
