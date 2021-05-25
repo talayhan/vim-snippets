@@ -24,3 +24,18 @@ snippet sgettimeofday
 		printf("The elapsed time is %d seconds and %d micros\n", seconds, micros);
 	}
 
+snippet sgettimeofdaypure
+	struct timeval start, end;
+
+	gettimeofday(&start, NULL);
+	// do some stuff here
+	gettimeofday(&end, NULL);
+
+	long seconds = (end.tv_sec - start.tv_sec);
+	long micros = ((seconds * 1000000) + end.tv_usec) - (start.tv_usec);
+	printf("The elapsed time is %d seconds and %d micros\n", seconds, micros);
+
+snippet slog2file
+	FILE *${1:filename} = fopen("$1.log", "a+"); // a+ (create + append)
+	fprintf($1, "${2:I'm logging something ...}\n");
+	fclose($1);
