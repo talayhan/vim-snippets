@@ -28,11 +28,11 @@ snippet ::
 # Underline with `=`s or `-`s
 snippet ===
 	`repeat('=', strlen(getline(line(".") - 1)))`
-	
+
 	${1}
 snippet ---
 	`repeat('-', strlen(getline(line(".") - 1)))`
-	
+
 	${1}
 
 # Links and their kin
@@ -148,7 +148,7 @@ snippet optparse
 	parser <- OptionParser(usage = "%prog [options] file", option_list=option_list)
 	arguments <- parse_args(parser, positional_arguments = TRUE)
 	opt <- arguments$options
-	
+
 	if(length(arguments$args) != 1) {
 	    cat("Incorrect number of required positional arguments\n\n")
 	    print_help(parser)
@@ -156,7 +156,7 @@ snippet optparse
 	} else {
 	    file <- arguments$args
 	}
-	
+
 	if( file.access(file) == -1) {
 	    stop(sprintf("Specified file ( %s ) does not exist", file))
 	} else {
@@ -196,10 +196,10 @@ snippet ri
 snippet copt
 	\`\`\` {r setup, echo = FALSE}
 		opts_chunk$set(fig.path='../figures/${1:}', cache.path='../cache/-'
-		, fig.align='center', fig.show='hold', par=TRUE)	
+		, fig.align='center', fig.show='hold', par=TRUE)
 		#opts_knit$set(upload.fun = imgur_upload) # upload images
 	\`\`\`
 
-	
+
 # End of File ===================================================================
 # vim: set noexpandtab:
