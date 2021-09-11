@@ -235,8 +235,14 @@ snippet qsa
 # Debugging
 snippet de
 	debugger;
+snippet ins "console.log"
+	console.log(util.inspect(${0}, {showHidden: false, depth: null}));
+snippet cle "console.log"
+	console.log("Enter!");
 snippet cl "console.log"
 	console.log(${0});
+snippet cll "console.log"
+	console.log("${1:}: " + $1);
 snippet cd "console.debug"
 	console.debug(${0});
 snippet ce "console.error"
