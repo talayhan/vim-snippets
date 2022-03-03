@@ -8,7 +8,7 @@ snippet base
 
 	%.o: %.c
 		$(CC) $(CFLAGS) -c -o $@ $<
-	
+
 	${1:out}: $1.o
 		$(CC) $(CFLAGS) -o $@ $+
 
@@ -24,6 +24,12 @@ snippet add
 # print
 snippet print
 	print-%: ; @echo $*=$($*)
+# info
+snippet info
+	$(info   ${1} is $($1))
+# info
+snippet infon
+	$(info   =======================)
 # ifeq
 snippet if
 	ifeq (${1:cond0}, ${2:cond1})

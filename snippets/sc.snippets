@@ -65,16 +65,13 @@ snippet slog2file
 	fprintf($1, "${2:I'm logging something ...}\n");
 	fclose($1);
 
-snippet prt
-	LOG_TRACE("${1:hello}");
-snippet prtfl
-	LOG_TRACE("${1}:%s", $1);
-snippet prl
-	LOG_WARNING("${1:hello}");
-snippet prlfl
-	LOG_WARNING("${1}:%s", $1);
-snippet prlflno
-	LOG_WARNING("${1}");
-
 snippet ARRAY_SIZE
 	#define ARRAY_SIZE(x) (sizeof(x) / sizeof((x)[0]))
+
+snippet note
+	/*@NOTE $1*/
+
+snippet pr64
+	printf("${1:}" PRIu64 "\n", ${2});
+snippet pr32
+	printf("${1:}" PRIu32 "\n", ${2});
