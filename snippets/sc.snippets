@@ -75,3 +75,7 @@ snippet pr64
 	printf("${1:}" PRIu64 "\n", ${2});
 snippet pr32
 	printf("${1:}" PRIu32 "\n", ${2});
+# %pI4 prints an IPv4 address in dotted-decimal form
+# ref: https://www.wikiwand.com/en/Printf_format_string
+snippet prI4
+	printf("${1:}" %pI4 "\n", ${2});
