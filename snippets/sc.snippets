@@ -43,10 +43,8 @@ snippet sgettimeofday
 		// do some stuff here
 		gettimeofday(&end, NULL);
 
-		long seconds = (end.tv_sec - start.tv_sec);
-		long micros = ((seconds * 1000000) + end.tv_usec) - (start.tv_usec);
-
-		printf("The elapsed time is %d seconds and %d micros\n", seconds, micros);
+		long diff = (end.tv_sec*1000000 + end.tv_usec) - (start.tv_sec*1000000 + start.tv_usec);
+		printf("The elapsed time is %lu micros\n", diff);
 	}
 
 snippet sgettimeofdaypure
@@ -56,9 +54,8 @@ snippet sgettimeofdaypure
 	// do some stuff here
 	gettimeofday(&end, NULL);
 
-	long seconds = (end.tv_sec - start.tv_sec);
-	long micros = ((seconds * 1000000) + end.tv_usec) - (start.tv_usec);
-	printf("The elapsed time is %d seconds and %d micros\n", seconds, micros);
+	long diff = (end.tv_sec*1000000 + end.tv_usec) - (start.tv_sec*1000000 + start.tv_usec);
+	printf("The elapsed time is %lu micros\n", diff);
 
 snippet slog2file
 	FILE *${1:filename} = fopen("$1.log", "a+"); // a+ (create + append)
