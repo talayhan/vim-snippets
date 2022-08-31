@@ -1,0 +1,18 @@
+snippet prat
+	LOG_TRACE("${1:Enter}");
+snippet prati
+	LOG_TRACE("${1}:%s", $1);
+snippet pratr
+	LOG_TRACE("Return with ret=(%u)", ret);
+snippet praw
+	LOG_WARNING("${1:enter}");
+snippet prae
+	LOG_ERROR("[DEBUG] ${1:enter}");
+snippet prawi
+	LOG_WARNING("${1}:%s", $1);
+snippet prawno
+	LOG_WARNING("${1}");
+snippet wlock
+	WanMgr_LockMutex();
+	$1
+	WanMgr_UnlockMutex();
